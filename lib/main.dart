@@ -4,6 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:options_gk/common/constants.dart';
 import 'package:options_gk/common/ui_constants.dart';
 import 'package:options_gk/common/ui_state.dart';
+import 'package:options_gk/screens/authentication/auth_profile_screen.dart';
+import 'package:options_gk/screens/authentication/sign_in_screen.dart';
+import 'package:options_gk/screens/dashboard_screen.dart';
+import 'package:options_gk/screens/historic_data.dart';
+import 'package:options_gk/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -34,81 +39,40 @@ class OptionsGkApp extends StatelessWidget {
   }
 
   final GoRouter _router = GoRouter(
-    //initialLocation: isLoggedIn ? '/dash' : '/',
-    debugLogDiagnostics: true,
-    routes: <GoRoute>[
-      GoRoute(
+      //initialLocation: isLoggedIn ? '/dash' : '/',
+      debugLogDiagnostics: true,
+      routes: <GoRoute>[
+        GoRoute(
           name: WELCOME_SCREEN,
           path: '/',
           builder: (BuildContext context, GoRouterState state) =>
               WelcomeScreen(),
           routes: [
             GoRoute(
-                name: CREATE_COMPANY_SCREEN,
+                name: HISTORIC_DATA_SCREEN,
                 path: 'createCompany',
                 builder: (BuildContext context, GoRouterState state) =>
-                    const CreateCompanyScreen()),
+                    const HistoricDataScreen()),
             GoRoute(
-                name: SIGN_IN_SCREEN,
-                path: 'signIn',
-                builder: (BuildContext context, GoRouterState state) =>
-                    const SignInWidget(),
-                routes: [
-                  GoRoute(
-                      name: VERIFY_EMAIL_SCREEN,
-                      path: 'verifyEmail',
-                      builder: (BuildContext context, GoRouterState state) =>
-                          const VerifyEmailScreen()),
-                  GoRoute(
-                      name: PHONE_SCREEN,
-                      path: 'phone',
-                      builder: (BuildContext context, GoRouterState state) =>
-                          const PhoneInputWidget(),
-                      routes: [
-                        GoRoute(
-                            name: SMS_SCREEN,
-                            path: 'sms',
-                            builder:
-                                (BuildContext context, GoRouterState state) {
-                              state.extra;
-                              return SmsInputScreen(
-                                  arguments:
-                                      state.extra as Map<String, dynamic>?);
-                            }),
-                      ]),
-                  GoRoute(
-                      name: FORGOT_PASSWORD_SCREEN,
-                      path: 'forgotPassword',
-                      builder: (BuildContext context, GoRouterState state) {
-                        state.extra;
-                        return ForgotPasswordWidget(
-                            arguments: state.extra as Map<String, dynamic>?);
-                      }),
-                  GoRoute(
-                      name: EMAIL_SIGN_IN_SCREEN,
-                      path: 'emailSignIn',
-                      builder: (BuildContext context, GoRouterState state) =>
-                          EmailSignInWidget()),
-                ]),
-          ]),
-      GoRoute(
-        name: DASHBOARD_SCREEN,
-        path: '/dash',
-        builder: (BuildContext context, GoRouterState state) =>
-            const DashBoardScreen(),
-        routes: <GoRoute>[
-          GoRoute(
-              name: NFC_TEST_SCREEN,
-              path: 'nfc',
+              name: SIGN_IN_SCREEN,
+              path: 'signIn',
               builder: (BuildContext context, GoRouterState state) =>
-                  const NfcTestScreen()),
-          GoRoute(
-              name: AUTH_PROFILE_SCREEN,
-              path: 'authProfile',
+                  const SignInScreen(),
+            ),
+            GoRoute(
+              name: DASHBOARD_SCREEN,
+              path: '/dash',
               builder: (BuildContext context, GoRouterState state) =>
-                  AuthProfileScreen()),
-        ],
-      ),
-    ],
-  );
+                  const DashBoardScreen(),
+              routes: <GoRoute>[
+                GoRoute(
+                    name: AUTH_PROFILE_SCREEN,
+                    path: 'authProfile',
+                    builder: (BuildContext context, GoRouterState state) =>
+                        AuthProfileScreen()),
+              ],
+            ),
+          ],
+        )
+      ]);
 }
