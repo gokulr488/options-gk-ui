@@ -39,7 +39,7 @@ class OptionsGkApp extends StatelessWidget {
   }
 
   final GoRouter _router = GoRouter(
-      //initialLocation: isLoggedIn ? '/dash' : '/',
+      initialLocation: '/',
       debugLogDiagnostics: true,
       routes: <GoRoute>[
         GoRoute(
@@ -61,7 +61,7 @@ class OptionsGkApp extends StatelessWidget {
             ),
             GoRoute(
               name: DASHBOARD_SCREEN,
-              path: '/dash',
+              path: 'dash',
               builder: (BuildContext context, GoRouterState state) =>
                   const DashBoardScreen(),
               routes: <GoRoute>[

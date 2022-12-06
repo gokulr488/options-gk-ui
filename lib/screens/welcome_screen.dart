@@ -7,20 +7,7 @@ import 'package:options_gk/components/responsive.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class WelcomeScreen extends StatefulWidget {
-  @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
-}
-
-class _WelcomeScreenState extends State<WelcomeScreen> {
-  @override
-  void initState() {
-    Timer(const Duration(milliseconds: 500), () {
-      // isLoggedIn ? context.goNamedNamed(DASHBOARD_SCREEN) : context.goNamed(SIGN_IN_SCREEN);
-    });
-    super.initState();
-  }
-
+class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BaseScreen(
