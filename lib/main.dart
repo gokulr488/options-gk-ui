@@ -24,7 +24,7 @@ class OptionsGkApp extends StatelessWidget {
     return Consumer<UiState>(
         builder: (BuildContext context, UiState uiState, _) {
       return MaterialApp.router(
-          title: 'Algo Track',
+          title: 'Options GK',
           theme: ThemeData(
               useMaterial3: true,
               colorSchemeSeed: uiState.baseColor,
