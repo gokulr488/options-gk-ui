@@ -2,7 +2,7 @@ import 'package:options_gk/common/constants.dart';
 
 part 'base_packet.g.dart';
 
-@firestoreSerializable
+@jsonSerializable
 class BasePacket {
   String packetType;
   String payload;

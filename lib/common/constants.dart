@@ -9,7 +9,7 @@ const String SIGN_IN_SCREEN = 'signIn';
 const String AUTH_PROFILE_SCREEN = 'authProfile';
 const String HISTORIC_DATA_SCREEN = 'historicData';
 
-const firestoreSerializable = JsonSerializable(
+const jsonSerializable = JsonSerializable(
   // The following values could alternatively be set inside your `build.yaml`
   explicitToJson: true,
   createFieldMap: true,
