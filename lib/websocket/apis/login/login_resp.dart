@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:options_gk/common/constants.dart';
 
 part 'login_resp.g.dart';

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:options_gk/common/constants.dart';
-import 'package:options_gk/common/ui_constants.dart';
 import 'package:options_gk/common/ui_state.dart';
 import 'package:options_gk/screens/authentication/auth_profile_screen.dart';
 import 'package:options_gk/screens/authentication/sign_in_screen.dart';
@@ -29,8 +28,8 @@ class OptionsGkApp extends StatelessWidget {
               useMaterial3: true,
               colorSchemeSeed: uiState.baseColor,
               brightness: uiState.themeMode,
-              inputDecorationTheme:
-                  kTextFieldDecorationTheme(Theme.of(context)),
+              // inputDecorationTheme:
+              //     kTextFieldDecorationTheme(Theme.of(context)),
               textTheme: GoogleFonts.openSansTextTheme(
                   ThemeData(brightness: uiState.themeMode).textTheme)),
           debugShowCheckedModeBanner: false,

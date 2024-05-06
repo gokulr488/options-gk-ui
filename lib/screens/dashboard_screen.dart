@@ -1,9 +1,9 @@
 import 'package:options_gk/common/constants.dart';
-import 'package:options_gk/components/base_screen.dart';
-import 'package:options_gk/components/responsive.dart';
-import 'package:options_gk/components/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:talos_commons/widgets/base_screen.dart';
+import 'package:talos_commons/widgets/responsive.dart';
+import 'package:talos_commons/widgets/rounded_button.dart';
 
 class DashBoardScreen extends StatelessWidget {
   const DashBoardScreen();

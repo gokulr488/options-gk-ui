@@ -1,7 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:options_gk/components/base_screen.dart';
+import 'package:talos_commons/widgets/base_screen.dart';
 
 class HistoricDataScreen extends StatelessWidget {
   const HistoricDataScreen({super.key});
